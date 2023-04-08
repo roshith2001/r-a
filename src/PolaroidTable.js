@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import Polaroid from './Polaroid';
 import './App.css';
 import polaroid1 from './images/polaroid1.jpeg';
@@ -11,14 +11,14 @@ import polaroid6 from './images/polaroid6.jpeg.jpg';
 const PolaroidTable = () => {
   const [blur, setBlur] = useState(false);
 
-  const polaroids = [
+  const polaroids = useMemo(() => [
     { image: polaroid1, text: 'Lorem ipsum dolor sit amet' },
     { image: polaroid2, text: 'Consectetur adipiscing elit' },
     { image: polaroid3, text: 'Sed do eiusmod tempor' },
     { image: polaroid4, text: 'Incididunt ut labore et dolore magna aliqua' },
     { image: polaroid5, text: 'Ut enim ad minim veniam' },
     { image: polaroid6, text: 'Quis nostrud exercitation ullamco laboris' },
-  ];
+  ], []);
 
   useEffect(() => {
     const activePolaroid = polaroids.find(polaroid => polaroid.active);

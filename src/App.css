@@ -92,3 +92,9 @@ body {
 .blur{
   opacity: 20%;
 }
+@media (max-width: 768px){
+  .polaroid.active {
+    width: 70vw;
+    height: 70vw;
+  }
+}
